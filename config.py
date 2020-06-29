@@ -50,13 +50,13 @@ proxies = []
 domain = 'qiandao.today'
 
 # mailgun 邮件发送, 域名和 apikey
-mail_smtp = ""
-mail_port = 465
+mail_smtp = os.getenv('MAILGUN_SMTP_SERVER', '')
+mail_port = os.getenv('MAILGUN_SMTP_PORT', 465)
 mail_ssl = True
-mail_user = ""
-mail_password = ""
-mail_domain = "mail.qiandao.today"
-mailgun_key = ""
+mail_user = os.getenv('MAILGUN_SMTP_LOGIN', '')
+mail_password = os.getenv('MAILGUN_SMTP_PASSWORD', '')
+mail_domain = os.getenv('MAILGUN_DOMAIN', '')
+mailgun_key = os.getenv('MAILGUN_API_KEY', '')
 
 # google analytics
 ga_key = ""
